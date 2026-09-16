@@ -57,6 +57,7 @@ SKILL_ENTRIES=(
   "paid-ads-creative:paid-ads/paid-ads-creative"
   "paid-ads-x:paid-ads/paid-ads-x"
   "paid-ads-linkedin:paid-ads/paid-ads-linkedin"
+  "paid-ads-reddit:paid-ads/paid-ads-reddit"
   "paid-ads-tiktok:paid-ads/paid-ads-tiktok"
   "paid-ads-amazon:paid-ads/paid-ads-amazon"
   "paid-ads-chatgpt:paid-ads/paid-ads-chatgpt"
@@ -70,6 +71,8 @@ SKILL_ENTRIES=(
   "meta-ads-creative:meta-ads/creative"
   "google-analytics:analytics/google-analytics"
   "search-console:analytics/search-console"
+  "wordpress:wordpress"
+  "gohighlevel:gohighlevel"
   "seo-analysis:seo/seo-analysis"
   "content-writer:seo/content-writer"
   "content-planner:seo/content-planner"
@@ -104,6 +107,8 @@ skill_path() { echo "${1#*:}"; }
 EVAL_SKILL_ENTRIES=(
   "paid-ads-x:paid-ads/paid-ads-x"
   "paid-ads-linkedin:paid-ads/paid-ads-linkedin"
+  "paid-ads-reddit:paid-ads/paid-ads-reddit"
+  "paid-ads-tiktok:paid-ads/paid-ads-tiktok"
   "google-ads:google-ads/manage"
   "google-ads-audit:google-ads/audit"
   "google-ads-copy:google-ads/copy"
@@ -112,6 +117,8 @@ EVAL_SKILL_ENTRIES=(
   "meta-ads-creative:meta-ads/creative"
   "google-analytics:analytics/google-analytics"
   "search-console:analytics/search-console"
+  "wordpress:wordpress"
+  "gohighlevel:gohighlevel"
   "seo-analysis:seo/seo-analysis"
   "content-writer:seo/content-writer"
   "content-planner:seo/content-planner"
@@ -189,7 +196,7 @@ for entry in "${SKILL_ENTRIES[@]}"; do
 done
 
 # Guard: actual SKILL.md count must match
-actual_skill_count=$(find "$REPO_ROOT/paid-ads" "$REPO_ROOT/google-ads" "$REPO_ROOT/seo" "$REPO_ROOT/meta-ads" "$REPO_ROOT/analytics" "$REPO_ROOT/notfair-upgrade-skill" "$REPO_ROOT/gemini" -name "SKILL.md" | wc -l | tr -d ' ')
+actual_skill_count=$(find "$REPO_ROOT/paid-ads" "$REPO_ROOT/google-ads" "$REPO_ROOT/seo" "$REPO_ROOT/meta-ads" "$REPO_ROOT/analytics" "$REPO_ROOT/wordpress" "$REPO_ROOT/gohighlevel" "$REPO_ROOT/notfair-upgrade-skill" "$REPO_ROOT/gemini" -name "SKILL.md" | wc -l | tr -d ' ')
 if [ "$actual_skill_count" -ne "${#SKILL_ENTRIES[@]}" ]; then
   fail "Expected ${#SKILL_ENTRIES[@]} SKILL.md files but found $actual_skill_count"
 else
@@ -297,6 +304,10 @@ assert_contains "$REPO_ROOT/README.md" "~~search-console" "README.md has Search 
 assert_contains "$REPO_ROOT/README.md" "~~google-analytics" "README.md has Google Analytics connector placeholder"
 assert_contains "$REPO_ROOT/README.md" "~~x-ads" "README.md has X Ads connector placeholder"
 assert_contains "$REPO_ROOT/README.md" "~~linkedin-ads" "README.md has LinkedIn Ads connector placeholder"
+assert_contains "$REPO_ROOT/README.md" "~~reddit-ads" "README.md has Reddit Ads connector placeholder"
+assert_contains "$REPO_ROOT/README.md" "~~tiktok-ads" "README.md has TikTok Ads connector placeholder"
+assert_contains "$REPO_ROOT/README.md" "~~wordpress" "README.md has WordPress connector placeholder"
+assert_contains "$REPO_ROOT/README.md" "~~gohighlevel" "README.md has GoHighLevel connector placeholder"
 
 # ─── Test 7: Reference docs exist ───────────────────────────
 

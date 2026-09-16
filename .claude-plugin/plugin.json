@@ -1,7 +1,7 @@
 {
   "name": "notfair",
-  "version": "0.27.7",
-  "description": "The official ads, analytics, SEO, and GEO plugin from NotFair. Operate Google, Meta, X, and LinkedIn Ads; analyze Google Search Console and GA4; and run open-source search and content workflows from any compatible agent.",
+  "version": "0.27.8",
+  "description": "The official ads, analytics, SEO, and GEO plugin from NotFair. Operate Google, Meta, X, LinkedIn, Reddit, and TikTok Ads; WordPress and GoHighLevel; analyze Google Search Console and GA4; and run open-source search and content workflows from any compatible agent.",
   "author": {
     "name": "NotFair",
     "url": "https://notfair.co"
@@ -17,6 +17,7 @@
     "./paid-ads/paid-ads-creative",
     "./paid-ads/paid-ads-x",
     "./paid-ads/paid-ads-linkedin",
+    "./paid-ads/paid-ads-reddit",
     "./paid-ads/paid-ads-tiktok",
     "./paid-ads/paid-ads-amazon",
     "./paid-ads/paid-ads-chatgpt",
@@ -30,6 +31,8 @@
     "./meta-ads/creative",
     "./analytics/google-analytics",
     "./analytics/search-console",
+    "./wordpress",
+    "./gohighlevel",
     "./seo/seo-analysis",
     "./seo/content-writer",
     "./seo/content-planner",
