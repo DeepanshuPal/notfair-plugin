@@ -13,7 +13,7 @@ Read this before any paid-media analysis, recommendation, or mutation. For live 
 
 ## Capability boundary
 
-NotFair currently exposes first-party MCP operating surfaces for Google Ads, Meta Ads, X Ads, and LinkedIn Ads. Route live work to the platform skill instead of recreating its procedures:
+NotFair currently exposes first-party MCP operating surfaces for Google Ads, Meta Ads, X Ads, LinkedIn Ads, Reddit Ads, and TikTok Ads. Route live work to the platform skill instead of recreating its procedures:
 
 | Need | Use |
 |---|---|
@@ -21,8 +21,10 @@ NotFair currently exposes first-party MCP operating surfaces for Google Ads, Met
 | Meta account setup, audit, management, or creative briefs | `/notfair:meta-ads-audit`, `/notfair:meta-ads`, or `/notfair:meta-ads-creative` |
 | X Ads account analysis, campaigns, line items, targeting, creative, audiences, or mutations | `/notfair:paid-ads-x` |
 | LinkedIn Ads account analysis, campaign groups, campaigns, creatives, targeting, conversions, leads, or mutations | `/notfair:paid-ads-linkedin` |
+| Reddit Ads account analysis, campaigns, ad groups, ads, targeting, audiences, pixels, or mutations | `/notfair:paid-ads-reddit` |
+| TikTok Ads account analysis, delivery entities, targeting, creative, or mutations | `/notfair:paid-ads-tiktok` |
 
-For TikTok, Amazon, and ChatGPT Ads, this plugin does not currently declare a NotFair MCP mutation surface. Treat those skills as planning and evidence-review workflows unless the current session exposes a verified connector. Never invent tool names, account access, platform limits, or a published campaign. Ask for an export, a read-only connector, or a human operator in the platform UI when needed.
+For Amazon and ChatGPT Ads, this plugin does not currently declare a NotFair MCP mutation surface. Treat those skills as planning and evidence-review workflows unless the current session exposes a verified connector. Never invent tool names, account access, platform limits, or a published campaign. Ask for an export, a read-only connector, or a human operator in the platform UI when needed.
 
 ## Reviewable artifacts
 

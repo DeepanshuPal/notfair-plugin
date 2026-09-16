@@ -1,6 +1,6 @@
 {
   "name": "notfair",
-  "version": "0.27.7",
+  "version": "0.27.8",
   "description": "The official ads, analytics, SEO, and GEO plugin from NotFair.",
   "author": {
     "name": "NotFair",
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "NotFair",
     "shortDescription": "Operate ads and analyze search performance.",
-    "longDescription": "Connect once to operate Google, Meta, X, and LinkedIn Ads, analyze GA4 and Search Console, and use open-source SEO and GEO workflows.",
+    "longDescription": "Connect once to operate Google, Meta, X, LinkedIn, Reddit, and TikTok Ads, WordPress, GoHighLevel, analyze GA4 and Search Console, and use open-source SEO and GEO workflows.",
     "developerName": "NotFair",
     "category": "Productivity",
     "capabilities": [

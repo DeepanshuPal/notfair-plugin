@@ -5,7 +5,7 @@
 
 **Open-source SEO, GEO, and marketing skills for AI agents.**
 
-The NotFair Plugin gives Claude Code, Codex, Hermes, and other compatible agents practical marketing workflows they can follow—not another generic prompt collection. Use it to audit a site, investigate a traffic drop, analyze GA4 and Search Console, find wasted ad spend across Google, Meta, X, and LinkedIn, build campaign plans, and make reviewable changes.
+The NotFair Plugin gives Claude Code, Codex, Hermes, and other compatible agents practical marketing workflows they can follow—not another generic prompt collection. Use it to audit a site, investigate a traffic drop, analyze GA4 and Search Console, find wasted ad spend across Google, Meta, X, LinkedIn, Reddit, and TikTok, operate connected WordPress and GoHighLevel accounts, build campaign plans, and make reviewable changes.
 
 Every skill is built in the open as a readable `SKILL.md`, with supporting references, scripts, and evals where needed. Inspect it, adapt it, or contribute a better workflow.
 
@@ -20,10 +20,14 @@ Every skill is built in the open as a readable `SKILL.md`, with supporting refer
 | **Meta Ads** | Review Facebook and Instagram performance, diagnose creative fatigue, assess audiences, and create evidence-based creative briefs |
 | **X Ads** | Analyze campaigns and line items, review conversion performance, manage targeting and creative, and execute approved changes |
 | **LinkedIn Ads** | Connect B2B media to lead quality, analyze campaign groups and campaigns, and manage targeting, creative, conversions, and leads |
+| **Reddit Ads** | Analyze campaigns, ad groups, and ads, review conversions and audiences, and execute approved Reddit Ads changes |
+| **TikTok Ads** | Analyze connected TikTok advertisers, review delivery and creative performance, and execute approved campaign changes |
+| **WordPress** | Read and update connected WordPress content, media, comments, design, settings, plugins, and approved site changes |
+| **GoHighLevel** | Read contacts, conversations, opportunities, and calendars, then make only explicitly requested CRM changes |
 | **Analytics** | Query live GA4 and Search Console data, compare complete periods, inspect URLs, manage sitemaps, and update supported measurement configuration |
 | **Content** | Turn search demand into editorial plans, briefs, articles, landing pages, metadata, and structured data |
 
-The NotFair Plugin currently ships **45 skills** across SEO, GEO, paid media, advertising platforms, analytics, and cross-model review.
+The NotFair Plugin currently ships **48 skills** across SEO, GEO, paid media, advertising platforms, analytics, WordPress, CRM, and cross-model review.
 
 ## Quick start
 
@@ -124,7 +128,7 @@ https://raw.githubusercontent.com/nowork-studio/notfair-plugin/main/INSTALL_FOR_
 Marketing work gets unreliable when every request goes through the same vague prompt. The NotFair Plugin splits the work into focused, testable procedures.
 
 - **Specialized:** each skill has a defined job, required inputs, decision rules, and output format.
-- **Evidence-led:** live-data workflows use Search Console, Google Analytics, Google Ads, Meta Ads, X Ads, or LinkedIn Ads instead of guessing from generic best practices.
+- **Evidence-led:** live-data workflows use Search Console, Google Analytics, Google Ads, Meta Ads, X Ads, LinkedIn Ads, Reddit Ads, TikTok Ads, WordPress, or GoHighLevel instead of guessing from generic best practices.
 - **Safe by design:** read-only review comes before mutation, paid-media changes stay explicit, and unsupported capabilities are never implied.
 - **Host-agnostic:** the canonical skills are plain files, not logic trapped inside one agent runtime.
 - **Forkable:** everything is MIT licensed, so teams can review and adapt the workflows to their own standards.
@@ -154,7 +158,7 @@ Marketing work gets unreliable when every request goes through the same vague pr
 | [`sxo`](seo/sxo/) | Connects search visibility and SERP CTR to the post-click conversion experience. |
 | [`seo-drift`](seo/seo-drift/) | Creates a baseline and detects ranking, metadata, canonical, and indexation regressions. |
 | [`backlink-audit`](seo/backlink-audit/) | Reviews referring domains, anchor text, link risk, and internal-link opportunities. |
-| [`setup-cms`](seo/setup-cms/) | Connects WordPress, Strapi, Contentful, or Ghost. |
+| [`setup-cms`](seo/setup-cms/) | Local Application-Password / `.env.local` setup for SEO scripts against WordPress, Strapi, Contentful, or Ghost. |
 
 ### Paid media
 
@@ -168,7 +172,8 @@ Marketing work gets unreliable when every request goes through the same vague pr
 | [`paid-ads-creative`](paid-ads/paid-ads-creative/) | Develops cross-channel concepts, claim ledgers, fatigue hypotheses, and test briefs. |
 | [`paid-ads-x`](paid-ads/paid-ads-x/) | Audits and operates connected X Ads campaigns, line items, targeting, creative, audiences, and budgets. |
 | [`paid-ads-linkedin`](paid-ads/paid-ads-linkedin/) | Audits and operates connected LinkedIn Ads around qualified pipeline outcomes. |
-| [`paid-ads-tiktok`](paid-ads/paid-ads-tiktok/) | Creates TikTok campaign plans, creator briefs, and short-form experiments. |
+| [`paid-ads-reddit`](paid-ads/paid-ads-reddit/) | Audits and operates connected Reddit Ads campaigns, ad groups, ads, audiences, pixels, and budgets. |
+| [`paid-ads-tiktok`](paid-ads/paid-ads-tiktok/) | Audits and operates connected TikTok Ads delivery, creative, targeting, and budgets. |
 | [`paid-ads-amazon`](paid-ads/paid-ads-amazon/) | Plans and reviews Amazon Ads with margin-aware ACoS guardrails. |
 | [`paid-ads-chatgpt`](paid-ads/paid-ads-chatgpt/) | Designs bounded ChatGPT Ads experiments or reviews verified exports. |
 | [`paid-ads-integrations`](paid-ads/paid-ads-integrations/) | Verifies connector, account, and tool access before promising a capability. |
@@ -199,6 +204,18 @@ Marketing work gets unreliable when every request goes through the same vague pr
 | [`google-analytics`](analytics/google-analytics/) | Analyzes live GA4 acquisition, engagement, pages, events, and conversions and safely manages supported measurement configuration. |
 | [`search-console`](analytics/search-console/) | Analyzes live Search Console queries and pages, inspects URLs, and manages approved sitemap submissions. |
 
+### WordPress
+
+| Skill | What it does |
+|---|---|
+| [`wordpress`](wordpress/) | Operates connected WordPress sites: content, media, comments, design, settings, plugins, themes, and approved HTML or admin changes. |
+
+### CRM
+
+| Skill | What it does |
+|---|---|
+| [`gohighlevel`](gohighlevel/) | Operates connected GoHighLevel contacts, conversations, opportunities, calendars, and other approved CRM changes. |
+
 ### Cross-model review and maintenance
 
 | Skill | What it does |
@@ -220,11 +237,14 @@ The agent chooses tools from the live server's instructions and capability descr
 | **Meta Ads** | Facebook and Instagram campaigns, ad sets, creatives, and insights | One NotFair connection |
 | **X Ads** | Campaigns, line items, performance, targeting, promoted posts, audiences, and approved mutations | One NotFair connection |
 | **LinkedIn Ads** | Campaign groups, campaigns, creatives, analytics, targeting, conversions, and leads | One NotFair connection |
-| **GoHighLevel** | Connected CRM and downstream lead workflows | One NotFair connection |
-| **CMS platforms** | Content and SEO-field review in WordPress, Strapi, Contentful, or Ghost | Platform API or compatible MCP |
+| **Reddit Ads** | Campaigns, ad groups, ads, reporting, audiences, pixels, funding instruments, and approved mutations | One NotFair connection |
+| **TikTok Ads** | Advertiser delivery, reporting, creative, targeting, and approved mutations | One NotFair connection |
+| **WordPress** | Connected site content, media, comments, design, settings, plugins, themes, and approved mutations | One NotFair connection |
+| **GoHighLevel** | Contacts, conversations, opportunities, calendars, and approved CRM mutations | One NotFair connection |
+| **Other CMS platforms** | Local SEO-script content review in Strapi, Contentful, or Ghost | `setup-cms` Application Password / API token, not NotFair MCP |
 | **Google Gemini** | Cross-model review | Gemini API key |
 
-Supported account operations come from the live connection. Changes must stay within the user's authorization and be verified against the resulting account state. TikTok, Amazon, and ChatGPT Ads remain planning or export-review workflows unless the current agent session exposes a verified connector.
+Supported account operations come from the live connection. Changes must stay within the user's authorization and be verified against the resulting account state. Amazon and ChatGPT Ads remain planning or export-review workflows unless the current agent session exposes a verified connector. `setup-cms` is a local SEO-script credential wizard; live WordPress work uses `/notfair:wordpress`.
 
 ## Privacy and support
 
@@ -232,7 +252,7 @@ Supported account operations come from the live connection. Changes must stay wi
 - [Support and community](https://discord.gg/gVJCRczpps)
 - [Issue tracker](https://github.com/nowork-studio/notfair-plugin/issues)
 
-Inside a skill, connectors use tool-agnostic placeholders such as `~~google-ads`, `~~meta-ads`, `~~x-ads`, `~~linkedin-ads`, `~~search-console`, `~~google-analytics`, and `~~cms`. The agent resolves each placeholder to a compatible tool available in the current session, so the workflow is not coupled to one MCP namespace.
+Inside a skill, connectors use tool-agnostic placeholders such as `~~google-ads`, `~~meta-ads`, `~~x-ads`, `~~linkedin-ads`, `~~reddit-ads`, `~~tiktok-ads`, `~~search-console`, `~~google-analytics`, `~~wordpress`, and `~~gohighlevel`. The agent resolves each placeholder to a compatible tool available in the current session, so the workflow is not coupled to one MCP namespace.
 
 ## How the repository is organized
 
@@ -244,6 +264,8 @@ notfair-plugin/
 ├── google-ads/                  # audit, management, copy, assets, landing pages
 ├── meta-ads/                    # audit, management, creative
 ├── analytics/                   # Google Analytics and Search Console MCP workflows
+├── wordpress/                   # live WordPress MCP operator
+├── gohighlevel/                 # live GoHighLevel CRM MCP operator
 ├── seo/                         # SEO, GEO, content, and technical-search skills
 ├── gemini/                      # cross-model review
 ├── test/                        # unit and LLM-judge evals

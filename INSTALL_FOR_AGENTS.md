@@ -83,14 +83,14 @@ Read `AGENTS.md` at the repo root. It contains the full intent → skill routing
 
 ## Step 4 — Connect external services
 
-The plugin registers one universal NotFair MCP server at `https://notfair.co/api/mcp/notfair`. The Codex install command above explicitly starts its native OAuth flow; other hosts prompt on install or first use. The user signs in once and selects a NotFair workspace. Follow any account setup guidance in the OAuth flow; connect additional platforms inside the selected workspace. Google Ads, Meta Ads, X Ads, LinkedIn Ads, Search Console, Google Analytics, and GoHighLevel are available as capabilities through that one connection.
+The plugin registers one universal NotFair MCP server at `https://notfair.co/api/mcp/notfair`. The Codex install command above explicitly starts its native OAuth flow; other hosts prompt on install or first use. The user signs in once and selects a NotFair workspace. Follow any account setup guidance in the OAuth flow; connect additional platforms inside the selected workspace. Google Ads, Meta Ads, X Ads, LinkedIn Ads, Reddit Ads, TikTok Ads, Search Console, Google Analytics, WordPress, and GoHighLevel are available as capabilities through that one connection.
 
 Follow [`docs/mcp-connection.md`](docs/mcp-connection.md) and the live server's instructions to discover the capabilities needed for the task and verify platform access. When upgrading, replace manually configured per-platform entries with the single `NotFair` connection and reauthorize when prompted.
 
 NotFair skills depend on external APIs. Walk the user through whichever they need:
 
 - **Google Ads** — connected in the same first-run flow for workspaces enabled in the staged Google-first rollout; otherwise connect it in NotFair.
-- **Google Search Console, Google Analytics, Meta Ads, X Ads, and LinkedIn Ads** — available through the same MCP after each platform is connected in the selected NotFair workspace.
+- **Google Search Console, Google Analytics, Meta Ads, X Ads, LinkedIn Ads, Reddit Ads, TikTok Ads, WordPress, and GoHighLevel** — available through the same MCP after each platform is connected in the selected NotFair workspace.
 - **Google Gemini** — required only for the `gemini` skill. Needs a Gemini API key in environment.
 
 Do **not** invent credentials. If a skill needs auth that isn't present, surface the gap and walk the user through the connection flow.
@@ -108,6 +108,6 @@ Do **not** invent credentials. If a skill needs auth that isn't present, surface
 ## Notes for agents
 
 - **Read `AGENTS.md` first** for any user intent. It is the resolver.
-- **Skills are host-agnostic.** A `SKILL.md` under `seo/`, `google-ads/`, `meta-ads/`, `gemini/` works identically on every supported host.
+- **Skills are host-agnostic.** A `SKILL.md` under `seo/`, `paid-ads/`, `google-ads/`, `meta-ads/`, `analytics/`, `wordpress/`, `gohighlevel/`, or `gemini/` works identically on every supported host.
 - **If you write into a user-edited file** (e.g., their workspace `AGENTS.md`), wrap your insertions in `<!-- notfair:managed -->` ... `<!-- /notfair:managed -->` fences so re-runs are idempotent and hand-edits survive.
 - **Do not duplicate skills** when adding new host adapters. Add a thin install adapter under `install/<host>/` that points the host at the existing skill files.

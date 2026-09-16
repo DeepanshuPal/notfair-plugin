@@ -9,6 +9,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.27.8] — 2026-09-16
+
+### Added
+
+- **Reddit Ads live operator.** Added `/notfair:paid-ads-reddit` for connected Reddit Ads accounts: discovery-first reads, approval-gated writes, microcurrency vs reporting-value handling, and paused creates unless activation is requested.
+- **WordPress live operator.** Added `/notfair:wordpress` for the first-party NotFair WordPress MCP connector. This is separate from `/notfair:setup-cms`, which remains the local Application-Password / `.env.local` wizard for SEO scripts.
+- **GoHighLevel live operator.** Added `/notfair:gohighlevel` for connected HighLevel CRM reads and explicitly requested writes.
+
+### Changed
+
+- **TikTok Ads is a live connector.** `/notfair:paid-ads-tiktok` now operates connected TikTok Ads accounts through NotFair MCP instead of staying plan/review-only. Creative and rights guidance remains available after the live diagnosis.
+- Router, integrations, operating-contract, connection docs, and plugin metadata now treat Google, Meta, X, LinkedIn, Reddit, and TikTok Ads plus GA4, Search Console, WordPress, and GoHighLevel as live NotFair surfaces. Amazon and ChatGPT Ads stay plan/review-only.
+
 ## [0.27.7] — 2026-09-10
 
 ### Changed

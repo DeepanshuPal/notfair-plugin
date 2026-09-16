@@ -24,8 +24,12 @@ UNIVERSAL_ENDPOINT = "https://notfair.co/api/mcp/notfair"
 PLATFORM_SKILLS = {
     "paid-ads/paid-ads-x": "~~x-ads",
     "paid-ads/paid-ads-linkedin": "~~linkedin-ads",
+    "paid-ads/paid-ads-reddit": "~~reddit-ads",
+    "paid-ads/paid-ads-tiktok": "~~tiktok-ads",
     "analytics/search-console": "~~search-console",
     "analytics/google-analytics": "~~google-analytics",
+    "wordpress": "~~wordpress",
+    "gohighlevel": "~~gohighlevel",
 }
 
 
@@ -123,6 +127,7 @@ def test_active_plugin_files_do_not_advertise_legacy_endpoints():
     roots = [ROOT / name for name in (
         "README.md", "AGENTS.md", "CLAUDE.md", "INSTALL_FOR_AGENTS.md",
         "docs", "install", "paid-ads", "google-ads", "meta-ads", "analytics", "seo",
+        "wordpress", "gohighlevel",
         ".claude-plugin", ".codex-plugin", ".cursor-plugin", ".github",
         ".mcp.json", "mcp.json", "server.json", "gemini-extension.json",
     )]
